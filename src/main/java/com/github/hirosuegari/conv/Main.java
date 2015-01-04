@@ -58,11 +58,9 @@ public class Main {
         // 文字列を分割してリストに詰める
         List<String> separateStrings = new ArrayList<String>();
         int next = 0;
-        int end = 0;
         for (Integer sep : separateNum) {
-            end = next + sep;
-            separateStrings.add(fixedString.substring(next, end));
-            next = end;
+            separateStrings.add(fixedString.substring(next, next + sep));
+            next = next + sep;
         }
         return separateStrings;
     }
